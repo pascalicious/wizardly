@@ -43,40 +43,38 @@
         </CompilerOptions>
       </Item1>
     </BuildModes>
-    <Units Count="11">
+    <Units Count="10">
       <Unit0>
         <Filename Value="wizardly.pas"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="3"/>
-        <CursorPos X="21" Y="26"/>
-        <UsageCount Value="73"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="12"/>
+        <CursorPos Y="39"/>
+        <UsageCount Value="150"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="wizmap.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="6"/>
-        <TopLine Value="74"/>
-        <CursorPos Y="116"/>
-        <UsageCount Value="73"/>
-        <Loaded Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="119"/>
+        <CursorPos X="42" Y="124"/>
+        <UsageCount Value="150"/>
       </Unit1>
       <Unit2>
         <Filename Value="wizdraw.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="5"/>
-        <CursorPos Y="40"/>
-        <UsageCount Value="73"/>
-        <Loaded Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="31"/>
+        <UsageCount Value="150"/>
       </Unit2>
       <Unit3>
         <Filename Value="wizglobals.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="34"/>
-        <CursorPos X="17" Y="45"/>
-        <UsageCount Value="73"/>
+        <TopLine Value="14"/>
+        <CursorPos X="19" Y="46"/>
+        <UsageCount Value="150"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
@@ -84,190 +82,181 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="15"/>
-        <UsageCount Value="72"/>
+        <UsageCount Value="149"/>
         <DefaultSyntaxHighlighter Value="Ini"/>
       </Unit4>
       <Unit5>
         <Filename Value="wiztex.pas"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="94"/>
-        <CursorPos X="43" Y="125"/>
-        <UsageCount Value="36"/>
-        <Loaded Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="91"/>
+        <CursorPos X="6" Y="102"/>
+        <UsageCount Value="57"/>
       </Unit5>
       <Unit6>
         <Filename Value="wizobj.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="124"/>
-        <CursorPos X="26" Y="125"/>
-        <UsageCount Value="19"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="50"/>
+        <CursorPos X="10" Y="86"/>
+        <UsageCount Value="52"/>
+        <Bookmarks Count="1">
+          <Item0 X="3" Y="40" ID="6"/>
+        </Bookmarks>
+        <Loaded Value="True"/>
       </Unit6>
       <Unit7>
-        <Filename Value="../../units/Lua/lua52.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="79"/>
-        <CursorPos X="29" Y="99"/>
-        <UsageCount Value="5"/>
+        <Filename Value="wizsys.pas"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="56"/>
+        <CursorPos X="22" Y="71"/>
+        <UsageCount Value="75"/>
+        <Loaded Value="True"/>
       </Unit7>
       <Unit8>
-        <Filename Value="wizsys.pas"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="5"/>
-        <CursorPos X="3" Y="22"/>
-        <UsageCount Value="36"/>
+        <Filename Value="wizcore.pas"/>
+        <TopLine Value="399"/>
+        <CursorPos X="76" Y="427"/>
+        <UsageCount Value="61"/>
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
-        <Filename Value="/usr/share/fpcsrc/3.0.0/packages/fcl-xml/src/dom.pp"/>
-        <UnitName Value="DOM"/>
+        <Filename Value="../../units/SDL2/sdltype.inc"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="221"/>
-        <CursorPos X="14" Y="234"/>
-        <UsageCount Value="5"/>
+        <CursorPos X="26" Y="4"/>
+        <UsageCount Value="8"/>
       </Unit9>
-      <Unit10>
-        <Filename Value="wizcore.pas"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="107"/>
-        <CursorPos X="12" Y="107"/>
-        <UsageCount Value="24"/>
-        <Loaded Value="True"/>
-      </Unit10>
     </Units>
     <OtherDefines Count="1">
       <Define0 Value="DEBUG"/>
     </OtherDefines>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="wizardly.pas"/>
-        <Caret Line="40" TopLine="13"/>
+        <Filename Value="wizcore.pas"/>
+        <Caret Line="265" Column="21" TopLine="233"/>
       </Position1>
       <Position2>
-        <Filename Value="wizardly.pas"/>
-        <Caret Line="42" TopLine="13"/>
+        <Filename Value="wizcore.pas"/>
+        <Caret Line="273" Column="67" TopLine="241"/>
       </Position2>
       <Position3>
-        <Filename Value="wizardly.pas"/>
-        <Caret Line="45" TopLine="13"/>
+        <Filename Value="wizcore.pas"/>
+        <Caret Line="282" Column="20" TopLine="250"/>
       </Position3>
       <Position4>
-        <Filename Value="wizsys.pas"/>
-        <Caret Line="53" TopLine="45"/>
+        <Filename Value="wizcore.pas"/>
+        <Caret Line="334" Column="71" TopLine="302"/>
       </Position4>
       <Position5>
-        <Filename Value="wizsys.pas"/>
-        <Caret Line="54" TopLine="45"/>
+        <Filename Value="wizcore.pas"/>
+        <Caret Line="372" Column="19" TopLine="340"/>
       </Position5>
       <Position6>
-        <Filename Value="wizsys.pas"/>
-        <Caret Line="55" TopLine="45"/>
+        <Filename Value="wizcore.pas"/>
+        <Caret Line="373" Column="19" TopLine="341"/>
       </Position6>
       <Position7>
-        <Filename Value="wizardly.pas"/>
-        <Caret Line="46" TopLine="13"/>
+        <Filename Value="wizcore.pas"/>
+        <Caret Line="413" Column="31" TopLine="382"/>
       </Position7>
       <Position8>
-        <Filename Value="wizmap.pas"/>
-        <Caret Line="304" TopLine="270"/>
+        <Filename Value="wizcore.pas"/>
+        <Caret Line="414" Column="31" TopLine="383"/>
       </Position8>
       <Position9>
-        <Filename Value="wizmap.pas"/>
-        <Caret Line="306" TopLine="270"/>
+        <Filename Value="wizcore.pas"/>
+        <Caret Line="415" Column="89" TopLine="384"/>
       </Position9>
       <Position10>
-        <Filename Value="wizmap.pas"/>
-        <Caret Line="304" TopLine="270"/>
+        <Filename Value="wizcore.pas"/>
+        <Caret Line="416" Column="89" TopLine="385"/>
       </Position10>
       <Position11>
-        <Filename Value="wizmap.pas"/>
-        <Caret Line="306" TopLine="270"/>
+        <Filename Value="wizcore.pas"/>
+        <Caret Line="420" Column="19" TopLine="388"/>
       </Position11>
       <Position12>
-        <Filename Value="wizmap.pas"/>
-        <Caret Line="304" TopLine="270"/>
+        <Filename Value="wizcore.pas"/>
+        <Caret Line="434" Column="19" TopLine="402"/>
       </Position12>
       <Position13>
-        <Filename Value="wizmap.pas"/>
-        <Caret Line="247" TopLine="221"/>
+        <Filename Value="wizcore.pas"/>
+        <Caret Line="435" Column="19" TopLine="403"/>
       </Position13>
       <Position14>
-        <Filename Value="wizmap.pas"/>
-        <Caret Line="29" Column="50" TopLine="4"/>
+        <Filename Value="wizcore.pas"/>
+        <Caret Line="436" Column="19" TopLine="404"/>
       </Position14>
       <Position15>
-        <Filename Value="wizmap.pas"/>
-        <Caret Line="61" TopLine="27"/>
+        <Filename Value="wizcore.pas"/>
+        <Caret Line="437" Column="19" TopLine="405"/>
       </Position15>
       <Position16>
-        <Filename Value="wizmap.pas"/>
-        <Caret Line="102" TopLine="81"/>
+        <Filename Value="wizcore.pas"/>
+        <Caret Line="572" Column="17" TopLine="541"/>
       </Position16>
       <Position17>
-        <Filename Value="wizardly.pas"/>
-        <Caret Line="24" Column="46" TopLine="13"/>
+        <Filename Value="wizcore.pas"/>
+        <Caret Line="573" Column="17" TopLine="542"/>
       </Position17>
       <Position18>
-        <Filename Value="wizdraw.pas"/>
-        <Caret Line="56" Column="16" TopLine="26"/>
+        <Filename Value="wizcore.pas"/>
+        <Caret Line="242" TopLine="234"/>
       </Position18>
       <Position19>
         <Filename Value="wizcore.pas"/>
-        <Caret Line="30"/>
+        <Caret Line="444" Column="30" TopLine="415"/>
       </Position19>
       <Position20>
         <Filename Value="wizcore.pas"/>
-        <Caret Line="73" Column="26" TopLine="52"/>
+        <Caret Line="342" Column="78" TopLine="322"/>
       </Position20>
       <Position21>
         <Filename Value="wizcore.pas"/>
-        <Caret Line="84" Column="18" TopLine="83"/>
+        <Caret Line="262" Column="34" TopLine="233"/>
       </Position21>
       <Position22>
-        <Filename Value="wizglobals.pas"/>
-        <Caret Line="86" Column="63" TopLine="50"/>
+        <Filename Value="wizcore.pas"/>
+        <Caret Line="137" Column="48" TopLine="118"/>
       </Position22>
       <Position23>
         <Filename Value="wizcore.pas"/>
-        <Caret Line="152" Column="37" TopLine="126"/>
+        <Caret Line="295" Column="21" TopLine="260"/>
       </Position23>
       <Position24>
         <Filename Value="wizcore.pas"/>
-        <Caret Line="132" Column="30" TopLine="104"/>
+        <Caret Line="275" Column="53" TopLine="259"/>
       </Position24>
       <Position25>
         <Filename Value="wizcore.pas"/>
-        <Caret Line="124" Column="37" TopLine="104"/>
+        <Caret Line="412" Column="19" TopLine="397"/>
       </Position25>
       <Position26>
         <Filename Value="wizcore.pas"/>
-        <Caret Line="132" Column="31" TopLine="103"/>
+        <Caret Line="417" Column="7" TopLine="387"/>
       </Position26>
       <Position27>
-        <Filename Value="wizglobals.pas"/>
-        <Caret Line="124" TopLine="54"/>
+        <Filename Value="wizcore.pas"/>
+        <Caret Line="416" Column="85" TopLine="387"/>
       </Position27>
       <Position28>
-        <Filename Value="wizglobals.pas"/>
-        <Caret Line="42" Column="3"/>
+        <Filename Value="wizcore.pas"/>
+        <Caret Line="419" Column="85" TopLine="400"/>
       </Position28>
       <Position29>
-        <Filename Value="wizcore.pas"/>
-        <Caret Line="124" Column="32" TopLine="103"/>
+        <Filename Value="wizobj.pas"/>
+        <Caret Line="73" Column="19" TopLine="53"/>
       </Position29>
       <Position30>
-        <Filename Value="wizsys.pas"/>
-        <Caret Line="100" Column="62" TopLine="62"/>
+        <Filename Value="wizcore.pas"/>
+        <Caret Line="429" Column="2" TopLine="367"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>
   <Debugging>
-    <Watches Count="2">
-      <Item1>
-        <Expression Value="tilesets"/>
+    <Watches Count="1">
+      <Item1 ClassAutoCast="True">
+        <Expression Value="tile"/>
       </Item1>
-      <Item2>
-        <Expression Value="t"/>
-      </Item2>
     </Watches>
   </Debugging>
 </CONFIG>

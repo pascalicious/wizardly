@@ -59,6 +59,7 @@ type
     portalmap : array of array of word;
     triggermap : array of array of word; // Won't matter as we're talking kb
     playerx, playery : word; // Player position in grid, not actual player pos
+    next : AnsiString;
     constructor Create(xmlfile : string);
     destructor Destroy; override;
   end;
@@ -71,21 +72,24 @@ procedure TWizTileset.LoadTexture;
 var
   t : PWizTexture;
   x, y : integer;
+  count : integer;
 begin
   texture:=TWizTextureManager.GetInstance.LoadTexture(filename);
+  sdlTexture:=TWizTextureManager.GetInstance.GetSDLTexture(texture);
   t := TWizTextureManager.GetInstance.GetTexture(texture);
   SetLength(clip, tilecount);
   w := round(t^.width/tilewidth);
   h := round(t^.height/tileheight);
-
+  count := 0;
   for y:=0 to h - 1 do
   begin
     for x:=0 to w - 1 do
     begin
-      clip[y+x].x := x*tilewidth;
-      clip[y+x].y := y*tileheight;
-      clip[y+x].w := tilewidth;
-      clip[y+x].h := tileheight;
+      clip[count].x := x*tilewidth;
+      clip[count].y := y*tileheight;
+      clip[count].w := tilewidth;
+      clip[count].h := tileheight;
+      inc(count);
     end;
   end;
 end;
@@ -113,7 +117,12 @@ begin
     SetLength(portalmap,w,h);
     while Assigned(node) do
     begin
-
+      if node.NodeName = 'properties' then
+      begin
+        child:=node.FirstChild;
+        next := AnsiString(child.Attributes[1].NodeValue);
+        writeln('Next map name: ', next);
+      end;
       if node.NodeName = 'tileset' then
       begin
         l := Length(tilesets);
@@ -186,6 +195,7 @@ begin
 
         if node.Attributes.GetNamedItem('name').NodeValue = 'Trigger' then
         begin
+          writeln('processing triggers');
           for y := 0 to h - 1 do
           begin
             for x := 0 to w - 1 do

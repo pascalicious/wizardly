@@ -24,39 +24,10 @@ unit wizdraw;
 interface
 
 uses
-  Classes, SysUtils,SDL2, wizcore, wiztex, wizsys, wizglobals;
+  Classes, SysUtils,SDL2;
 
 type
-
-  TWizCamera = class
-    wizLevel : TWizLevel;
-    lvlX, lvlY : integer; //top left map coords drawn
-    scrollX, scrollY : integer;
-    sizeX, sizeY : integer; // Size of map
-    width, height : integer; // Size of portion to draw
-    renderlist : array of integer;
-    constructor Create(lvl : TWizLevel);
-  end;
-
-  { TWizDraw }
-
-  TWizDraw = class
-    wizWindow : TWizWindow;
-    wizLevel : TWizLevel;
-
-  end;
-
 implementation
-{>> TWizCamera <<}
-constructor TWizCamera.Create(lvl : TWizLevel);
-begin
-  wizlevel := lvl;
-  sizeX := lvl.width;
-  sizeY := lvl.height;
-  SetLength(renderlist, sizeX*sizeY);
-end;
-{<< TWizCamera >>}
-
 
 end.
 { vim: set ts=2 sw=2 tw=0  }

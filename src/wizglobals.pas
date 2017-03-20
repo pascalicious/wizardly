@@ -24,22 +24,26 @@ unit wizglobals;
 interface
 
 uses
-  Classes, SysUtils, IniFiles;
+  Classes, SysUtils, IniFiles, SDL2;
 const
   ITEM_CHEST=65;
   ITEM_COIN=66;
   ITEM_KEY=67;
+  ITEM_FOOD=68;
+  ITEM_POTION=69;
 
   TRIGGER_WALL=81;
-  TRIGGER_DOOR=82;
+  TRIGGER_DANGER=82;
   TRIGGER_ENTRY=83;
   TRIGGER_ITEM=84;
   TRIGGER_SPAWN=85;
   TRIGGER_EXIT=86;
   TRIGGER_TRIG=87;
-  TRIGGER_PORT=88;
+  TRIGGER_PORTAL=88;
   TRIGGER_KEY=89;
 
+  PORTAL_DOOR1=90;
+  PORTAL_DOOR2=91;
 type
 
   { TWizSettings }
@@ -59,11 +63,17 @@ type
     class var viewportHeight : integer;
     class var vpTextureWidth : integer;
     class var vpTextureHeight : integer;
+    class var horizontalPadding : integer;
+    class var verticalPadding : integer;
     class var fullscreen : boolean;
     class var debug : boolean;
     class var pathDelim : AnsiString;
     class var assetPath : AnsiString;
-
+    // units
+    class var playerHeight : integer;
+    class var playerWidth : integer;
+    class var movementSpeed : double;
+    class var pixelMargin : integer;
     class procedure ReadSettings;
     class procedure WriteSettings;
   end;
@@ -86,20 +96,28 @@ begin
     renderHeight:=ini.ReadInteger('system','renderHeight', 360);
     tileWidth:=ini.ReadInteger('system','tileWidth',16);
     tileHeight:=ini.ReadInteger('system','tileHeight',16);
-    gridWidth:=ini.ReadInteger('system','gridWidth',round(renderWidth/tileWidth));
-    gridHeight:=ini.ReadInteger('system','gridHeight',round(renderHeight/tileHeight));
     centerX := round(renderWidth/2);
     centerY := round(renderHeight/2);
-    viewportLeft:=ini.ReadInteger('system','viewportLeft',120);
+    viewportLeft:=ini.ReadInteger('system','viewportLeft',tileWidth);
     viewportTop:=ini.ReadInteger('system','viewportTop',tileHeight);
-    viewportWidth:=ini.ReadInteger('system','viewportWidth',20*tileWidth);
-    viewportHeight:=ini.ReadInteger('system','viewportHeight',20*tileHeight);
-    vpTextureWidth:=viewportWidth+2*tileWidth;
-    vpTextureHeight:=viewportHeight+2*tileHeight;
+    viewportWidth:=ini.ReadInteger('system','viewportWidth',16*tileWidth);
+    viewportHeight:=ini.ReadInteger('system','viewportHeight',12*tileHeight);
+    gridWidth:=ini.ReadInteger('system','gridWidth',18);
+    gridHeight:=ini.ReadInteger('system','gridHeight',15);
+    horizontalPadding:=round(gridWidth/2);
+    verticalPadding:=round(gridHeight/2);
+    vpTextureWidth:=gridWidth*tileWidth;
+    vpTextureHeight:=gridHeight*tileHeight;
     b:=ini.ReadInteger('system','fullscreen',0);
     if b > 0 then fullscreen:=true else fullscreen:=false;
     b:=ini.ReadInteger('system','debug', 0);
     if b > 0 then debug:=true else fullscreen:=false;
+    assetPath:=ini.ReadString('system','assetPath','assets'+pathDelim);
+    // units
+    playerWidth:=ini.ReadInteger('units','playerWidth',12);
+    playerHeight:=ini.ReadInteger('units','playerHeight',14);
+    movementSpeed:=ini.ReadFloat('units','movementSpeed',0.2);
+    pixelMargin:=ini.ReadInteger('units','pixelMargin',2);
   finally
     ini.Free;
   end;
@@ -128,6 +146,12 @@ begin
     ini.WriteString('system','fullscreen',IntToStr(b));
     if debug then b:=1 else b:=0;
     ini.WriteString('system','debug',IntToStr(b));
+    ini.WriteString('system','assetPath',assetPath);
+    // units
+    ini.WriteInteger('units','playerWidth',playerWidth);
+    ini.WriteInteger('units','playerHeight',playerHeight);
+    ini.WriteFloat('units','movementSpeed',movementSpeed);
+    ini.WriteInteger('units','pixelMargin', 2);
   finally
     ini.Free;
   end;

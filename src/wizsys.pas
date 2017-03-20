@@ -36,6 +36,7 @@ type
     sdlRenderer : PSDL_Renderer;
     viewPort : TSDL_Rect;
     viewPortTexture : PSDL_Texture;
+    renderCanvas : PSDL_Texture;
     sdlClearColor : TSDLColor;
     windowWidth : integer;
     windowHeight : integer;
@@ -43,6 +44,7 @@ type
     renderHeight : integer;
     windowFullscreen : boolean;
     windowCaption : AnsiString;
+    lastloop, thisloop : cardinal;
     constructor Create;
     destructor Destroy; override;
     procedure Clear;
@@ -54,14 +56,19 @@ procedure TWizWindow.Clear;
 begin
   SDL_SetRenderDrawColor(sdlRenderer,sdlClearColor.r, sdlClearColor.g, sdlClearColor.b, sdlClearColor.a);
   SDL_RenderClear(sdlRenderer);
+  //SDL_SetRenderDrawColor(sdlRenderer,33,33,33,255);
+  SDL_SetRenderTarget(sdlRenderer,viewPortTexture);
+  SDL_RenderClear(sdlRenderer);
 end;
 procedure TWizWindow.Update;
+var
+  delta : cardinal;
 begin
-  {$IFDEF DEBUG}
-  SDL_SetRenderDrawColor(sdlRenderer,0,255,0,64);
-  SDL_RenderDrawRect(sdlRenderer,@viewPort);
-  {$ENDIF}
+  thisloop:=SDL_GetTicks;
+  delta := thisloop - lastloop;
   SDL_RenderPresent(sdlRenderer);
+  if (200-delta) > 0 then SDL_Delay(200-delta);
+  lastloop:=thisloop;
 end;
 destructor TWizWindow.Destroy;
 begin
@@ -93,15 +100,17 @@ begin
   Assert(sdlWindow <> nil, SDL_GetError);
   sdlRenderer := SDL_CreateRenderer(sdlWindow, -1, SDL_RENDERER_ACCELERATED or SDL_RENDERER_TARGETTEXTURE);
   Assert(sdlRenderer <> nil, SDL_GetError);
-  SDL_RenderSetLogicalSize(sdlRenderer,renderWidth, renderHeight);
   viewPort.x := TWizSettings.viewportLeft;
   viewPort.y := TWizSettings.viewportTop;
-  viewPort.w := TWizSettings.viewportWidth;
-  viewPort.h := TWizSettings.viewportHeight;
+  viewPort.w := round(TWizSettings.viewportWidth*1.5);
+  viewPort.h := round(TWizSettings.viewportHeight*1.5);
   vpw := TWizSettings.vpTextureWidth;
   vph := TWizSettings.vpTextureHeight;
   viewPortTexture := SDL_CreateTexture(sdlRenderer,SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET,vpw,vph);
   Assert(viewPortTexture <> nil, SDL_GetError);
+  SDL_RenderSetLogicalSize(sdlRenderer, renderWidth, renderHeight);
+  lastloop:=SDL_GetTicks;
+  thisloop:=0;
 end;
 {<< TWizWindow >>}
 end.

@@ -21,37 +21,30 @@ program wizardly;
   {$ASSERTIONS ON}
 {$ENDIF}
 
+{ TODO : Add a slash screen with Lazarus/Free Pascal logo }
+{ TODO : Add a title screen/main menu }
 uses
-    Classes, SysUtils, SDL2, wizsys, wiztex, wizmap, wizdraw,
-wizglobals, wizcore;
+  Classes, SysUtils, SDL2, wizsys, wiztex, wizmap, wizglobals, wizcore, wizobj;
 
 var
     wiz : TWizWindow;
     tex : TWizTextureManager;
     map : TWizMap;
-    draw : TWizDraw;
     level : TWizLevel;
     event : TSDL_Event;
     running : boolean;
+    tr : TWizTileRenderer;
+    game : TWizGame;
 begin
     TWizSettings.ReadSettings;
     wiz := TWizWindow.Create;
     tex := TWizTextureManager.Create(wiz);
-    map := TWizMap.Create('assets/lvl1.tmx');
-    level := TWizLevel.Create(map); // Create an array of tiles
-    FreeAndNil(map); // Dispose the map
-    running := true;
-    while running do
-    begin
-      while SDL_PollEvent(@event) > 0 do begin
-        if event.type_ = SDL_QUITEV then running := false;
-      end;
-      wiz.Clear;
-      wiz.Update;
-    end;
+    tex.LoadTexture('void.png');
+    game:=TWizGame.Create(wiz,'lvl1.tmx');
+    game.Run;
+    FreeAndNil(game);
     FreeAndNil(wiz);
     FreeAndNil(tex);
-    FreeAndNil(level);
     TWizSettings.WriteSettings;
 end.
 

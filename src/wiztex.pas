@@ -44,6 +44,7 @@ type
         destructor Destroy; override;
         function FindTexture(filename : AnsiString) : integer;
         function GetSDLTexture(id : integer) : PSDL_Texture;
+        function GetSDLTexture(name : AnsiString) : PSDL_Texture;
         function GetTexture(id : integer) : PWizTexture;
         function LoadTexture(filename : AnsiString) : integer;
         class function GetInstance:TWizTextureManager;
@@ -103,6 +104,15 @@ begin
     Assert(id < Length(textures), 'Yeah. Sure. Thought of loading it first?');
     result := textures[id]^.sdlTexture
 
+end;
+
+function TWizTextureManager.GetSDLTexture(name: AnsiString): PSDL_Texture;
+var
+  i : integer;
+begin
+  i:=FindTexture(name);
+  if i < 0 then i := LoadTexture(name);
+  result := textures[i]^.sdlTexture;
 end;
 
 function TWizTextureManager.GetTexture(id : integer) : PWizTexture;
